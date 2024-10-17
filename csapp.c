@@ -1,34 +1,5 @@
-/* 
- * csapp.c - Functions for the CS:APP3e book
- *
- * Updated 10/2016 reb:
- *   - Fixed bug in sio_ltoa that didn't cover negative numbers
- *
- * Updated 2/2016 droh:
- *   - Updated open_clientfd and open_listenfd to fail more gracefully
- *
- * Updated 8/2014 droh: 
- *   - New versions of open_clientfd and open_listenfd are reentrant and
- *     protocol independent.
- *
- *   - Added protocol-independent inet_ntop and inet_pton functions. The
- *     inet_ntoa and inet_aton functions are obsolete.
- *
- * Updated 7/2014 droh:
- *   - Aded reentrant sio (signal-safe I/O) routines
- * 
- * Updated 4/2013 droh: 
- *   - rio_readlineb: fixed edge case bug
- *   - rio_readnb: removed redundant EINTR check
- */
-/* $begin csapp.c */
-#include "csapp.h"
 
-/************************** 
- * Error-handling functions
- **************************/
-/* $begin errorfuns */
-/* $begin unixerror */
+#include "csapp.h"
 void unix_error(char *msg) /* Unix-style error */
 {
     fprintf(stderr, "%s: %s\n", msg, strerror(errno));
